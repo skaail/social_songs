@@ -9,6 +9,9 @@ connectDB()
 
 app.use(express.json())
 
+const userRouter = require('./src/routes/users')
+app.use('/api', userRouter)
+
 app.listen(PORT, () => {
     console.log(`Server rodando na porta ${PORT}`)
 })

@@ -37,4 +37,4 @@ notasSchema.pre('save', async function() {
 
 const Notas = mongoose.model('Notas', notasSchema)
 
-module.exports(Notas)
+module.exports = Notas
