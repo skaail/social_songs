@@ -3,6 +3,8 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const { check, validationResult } = require('express-validator');
 const Nota = require('../models/Notas');
+const albumArt = require( 'album-art' )
+
 
 router.post('/notas', 
     [auth, [check('album', 'O Album é obrigatório').not().isEmpty(), check('nota', 'A nota é obrigatória').not().isEmpty()]],
@@ -18,6 +20,7 @@ router.post('/notas',
                 album: req.body.album,
                 nota: req.body.nota,
                 band: req.body.band,
+                art: await albumArt(req.body.band, {album: req.body.album}),
                 author: req.user.id
             })
 
@@ -28,6 +31,7 @@ router.post('/notas',
                 album: nota.album,
                 band: nota.band,
                 nota: nota.nota,
+                art: nota.art,
                 createdAt: nota.createdAt
             })
         } catch (err) {

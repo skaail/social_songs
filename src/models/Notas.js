@@ -17,6 +17,10 @@ const notasSchema = new mongoose.Schema({
         required: true
     },
 
+    art: {
+        type: String
+    },
+
     nota: {
         type: Number,
         required: true
