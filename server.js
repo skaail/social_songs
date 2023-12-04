@@ -19,6 +19,9 @@ app.use('/api', authRouter);
 const notasRouter = require('./src/routes/notas');
 app.use('/api', notasRouter);
 
+const listasRouter = require('./src/routes/listas');
+app.use('/api', listasRouter);
+
 app.listen(PORT, () => {
     console.log(`Server rodando na porta ${PORT}`)
 })

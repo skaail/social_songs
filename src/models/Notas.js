@@ -29,7 +29,7 @@ const notasSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-      }
+    }
 })
 
 notasSchema.pre('save', async function() {
