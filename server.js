@@ -21,7 +21,6 @@ app.use('/api', notasRouter);
 
 app.listen(PORT, () => {
     console.log(`Server rodando na porta ${PORT}`)
-    teste()
 })
 
 module.exports = app
