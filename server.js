@@ -12,6 +12,9 @@ app.use(express.json())
 const userRouter = require('./src/routes/users')
 app.use('/api', userRouter)
 
+const authRouter = require('./src/routes/auth');
+app.use('/api', authRouter);
+
 app.listen(PORT, () => {
     console.log(`Server rodando na porta ${PORT}`)
 })
