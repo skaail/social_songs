@@ -41,5 +41,20 @@ router.post('/notas',
     }
 
 )
+router.get('/notas', async (req, res) => {
+    try {
+        
+        const filter = {};
+        const all = await Nota.find(filter);
+        res.json({notas: all})
+
+    } catch (err) {
+        
+        console.error(err.message);
+        res.status(500).send('Server Error');
+
+    }
+  });
+
 
 module.exports = router
