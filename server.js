@@ -1,4 +1,5 @@
 const express = require('express')
+const albumArt = require( 'album-art' )
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -20,6 +21,7 @@ app.use('/api', notasRouter);
 
 app.listen(PORT, () => {
     console.log(`Server rodando na porta ${PORT}`)
+    teste()
 })
 
 module.exports = app

@@ -17,6 +17,7 @@ router.post('/notas',
             const nota = new Nota({
                 album: req.body.album,
                 nota: req.body.nota,
+                band: req.body.band,
                 author: req.user.id
             })
 
@@ -25,6 +26,7 @@ router.post('/notas',
             res.json({
                 id: nota.id,
                 album: nota.album,
+                band: nota.band,
                 nota: nota.nota,
                 createdAt: nota.createdAt
             })

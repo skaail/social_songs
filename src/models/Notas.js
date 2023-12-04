@@ -12,6 +12,11 @@ const notasSchema = new mongoose.Schema({
         required: true
     },
 
+    band: {
+        type: String,
+        required: true
+    },
+
     nota: {
         type: Number,
         required: true
