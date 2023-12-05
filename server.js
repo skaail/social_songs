@@ -1,11 +1,16 @@
 const express = require('express')
 const albumArt = require( 'album-art' )
+require('dotenv').config()
+var cors = require('cors')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+app.use(cors())
+
+
+const PORT = process.env.PORT || 3001
 
 const connectDB = require('./src/config/db')
-require('dotenv').config()
+
 connectDB()
 
 app.use(express.json())
